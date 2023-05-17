@@ -17,4 +17,4 @@ async function data(ctx, cmd) {
 }
 
 
-psc.command({ name: "new", aliases: "add" }, data);
+psc.command({ name: "new", aliases: ["add"] }, data);
