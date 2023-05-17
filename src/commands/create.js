@@ -8,12 +8,12 @@ async function data(ctx, cmd) {
     let j = cmd.args.join(" ");
   
     if (stuff.includes(j)) {
-        return psc.reply("That's already in there dumbass", { deleteAfter: "2s" });
+        return psc.reply("that's already in there dumbass", { deleteAfter: "2s" });
     }
     else stuff.push(j);
     stuff.dump(file, null, 4);
     
-    return ctx.reply("Added your shit `"+j+"`");
+    return ctx.reply("added your shit `"+j+"`");
 }
 
 
