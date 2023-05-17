@@ -4,7 +4,7 @@ const { PSClient } = require('./src/packages/discordpps');
 const psc = new PSClient({ client: bot, prefix: "s!" });
 
 const config = require('./config.json');
-const stuff = require('./src/data/stuff.js');
+const raw = require('./src/data/stuff.js');
 
 /* login stuff */
 bot.on("ready", () => {
@@ -21,6 +21,7 @@ bot.on("messageCreate", () => {
 
 /* status updater */
 function update() {
+	var stuff = raw.load();
 	bot.user.setPresence({
 		activities: [{
 			name: `over ${stuff.length} things`,
