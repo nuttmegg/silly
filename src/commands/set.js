@@ -27,4 +27,4 @@ async function data(ctx, cmd) {
 }
 
 
-psc.command({ name: "set", aliases: "edit" }, data);
+psc.command({ name: "set", aliases: ["edit"] }, data);
