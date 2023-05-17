@@ -35,4 +35,9 @@ function update() {
 bot.login(config.token);
 module.exports = { psc, bot };
 
+
+
+/* builders */
+require('./src/commands/build');
 psc.setCooldown(3);
+require('./src/events/build');
