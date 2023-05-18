@@ -5,10 +5,12 @@ async function data(ctx, cmd) {
     let stuff = require('../data/stuff.js').load();
     let index = cmd.args[0];
     
-    
     if (!cmd.args[0]) {
         return psc.reply("you have to put an index to get dumbass", { deleteAfter: "2s" });
     }
+
+	index = Soup.from(index).replaceAll("#", "").join("");
+	
 	if ( !(parseInt(index)+1) ) {
 		return psc.reply("you have to put an actual number dumbass", { deleteAfter: "2s" });
 	}
