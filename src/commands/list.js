@@ -2,7 +2,7 @@ var { psc, bot } = require('../../index.js');
 var { Paged } = require('../classes');
 const { Soup } = require('stews');
 
-async function data(ctx, cmd) {
+async function data(ctx) {
     let stuff = require('../data/stuff.js').load().copy();
     let page = 1;
 
@@ -27,4 +27,4 @@ async function data(ctx, cmd) {
 }
 
 
-psc.command({ name: "list", aliases: ["all", "every"] }, data);
+psc.buttonAction(data);
