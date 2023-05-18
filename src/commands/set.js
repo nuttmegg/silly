@@ -8,9 +8,14 @@ async function data(ctx, cmd) {
     let index = cmd.args[0];
     cmd.args.shift();
     let j = cmd.args.join(" ");
-  
-    
-    if (!index || !parseInt(index)+1) {
+
+	if (!cmd.args[0]) {
+        return psc.reply("you have to put an index to get dumbass", { deleteAfter: "2s" });
+    }
+	
+	index = Soup.from(index).replaceAll("#", "").join("");
+	
+    if (!index || !(parseInt(index)+1)) {
         return psc.reply("you have to put a valid index to set dumbass", { deleteAfter: "2s" });
     }
     if (parseInt(index) < 0) {
@@ -24,11 +29,11 @@ async function data(ctx, cmd) {
     }
     
     
-    else stuff.set(index, j);
+    else stuff.set(parseInt(index), j);
     stuff.dump(file, null, 4);
     
     
-    return ctx.reply(`set your shit at to `+"`"+j+"`");
+    return ctx.reply(`set your shit at index #${index} to `+"`"+j+"`");
 }
 
 
