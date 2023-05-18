@@ -6,9 +6,12 @@ async function data(ctx, cmd) {
     let index = cmd.args[0];
     
     
-    if (!parseInt(index)+1) {
+    if (!cmd.args[0]) {
         return psc.reply("you have to put an index to get dumbass", { deleteAfter: "2s" });
     }
+	if ( !(parseInt(index)+1) ) {
+		return psc.reply("you have to put an actual number dumbass", { deleteAfter: "2s" });
+	}
     if (parseInt(index) < 0) {
         return psc.reply("you can't get an index that's less than 0 dumbass", { deleteAfter: "2s" });
     }
@@ -16,7 +19,7 @@ async function data(ctx, cmd) {
         return psc.reply("you can't get an index that's greater than the entirety of the stuff dumbass", { deleteAfter: "2s" });
     }
     
-    
+    index = parseInt(index);
     let content = stuff.get(index);
     
     if (!content) {
