@@ -20,4 +20,4 @@ function vary(thing, obj) {
 }
 
 
-module.exports = { ID, vary };
+module.exports = { vary };
