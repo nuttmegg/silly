@@ -3,7 +3,7 @@ const { Soup } = require('stews');
 
 async function data(ctx, cmd) {
     let stuff = require('../data/stuff.js').load();
-    let file = "./src/data/stuff.json");
+    let file = "./src/data/stuff.json";
     
     let j = cmd.args.join(" ");
   
